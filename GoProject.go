@@ -33,7 +33,7 @@ func intopost(infix string) string {
 			s = s[:len(s)-1]
 		//if a special character is found
 		case specials[r] > 0:
-			//for while the stack still has an element on it and the precedence of the current character that reads is <= the precedence of the top element of the stack
+
 			for len(s) > 0 && specials[r] <= specials[s[len(s)-1]] {
 				//Takes stack character and puts into pofix
 				pofix, s = append(pofix, s[len(s)-1]), s[:len(s)-1]
@@ -44,8 +44,8 @@ func intopost(infix string) string {
 		default:
 			//Takes the default characters and puts it at the end of pofix
 			pofix = append(pofix, r)
-		}
-	}
+		}//switch
+	}//infix
 
 	//append to pofix whatever is left on the stack
 	for len(s) > 0 {
