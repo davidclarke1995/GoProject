@@ -12,18 +12,20 @@ import (
 	
 )//imports
 
+//test
+
 func main() {
 
 	option := 0
 	exit := true
 
-	for exit {
+	for exit {//looping the user interface
 
 
 		fmt.Print("Please select an option:\n1)Infix Expression to Postfix Expresssion\n2)Postix Regular Expresssion to NFA\n3)Exit\n")
 		fmt.Scanln(&option)
 
-		if option == 1 {
+		if option == 1 {//if statement taking in the users expression of choice for 1st option
 			fmt.Print("Please enter the expression you want to convert: ")
 			reader := bufio.NewReader(os.Stdin)
 			expression, _ := reader.ReadString('\n')
@@ -33,7 +35,7 @@ func main() {
 			fmt.Println("Infix:  ", expression)
 			fmt.Println("Postfix: ", assets.Intopost(expression))
 
-		} else if option == 2 {
+		} else if option == 2 {//if statement taking in the users expression of choice for 2nd option
 
 			fmt.Print("Please enter the expression to be converted:")
 			reader := bufio.NewReader(os.Stdin)
