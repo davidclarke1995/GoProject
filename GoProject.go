@@ -3,7 +3,7 @@
 //Reference: https://golang.org/
 
 //package main
-package assets
+package thompson
  
 func Intopost(infix string) string {
  	//Creates a map with special characters and maps them to ints

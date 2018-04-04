@@ -1,18 +1,19 @@
 //David Clarke G00335563
 //Adapted from https://web.microsoftstream.com/video/9d83a3f3-bc4f-4bda-95cc-b21c8e67675e
 //Reference: https://golang.org/
+//https://cs.stackexchange.com/questions/43845/does-thompsons-algorithm-produce-optimal-nfas
  
-package assets
+package thompson
  
  import (
  	"fmt"
 )
- 
+  //the nfa structures
   type nfa struct {
  	initial *state
  	accept  *state
  }
- 
+ //the state structures
  type state struct {
  	symbol rune
  	edge1  *state
@@ -22,24 +23,32 @@ package assets
  
 func Poregtonfa(pofix string) *nfa {
  	nfastack := []*nfa{}
- 
+	//for each element in the string that was passed in to the function
  	for _, r := range pofix {
  		switch r {
- 		case '.':
+ 		case '.'://if the character = '.'
  			frag2 := nfastack[len(nfastack)-1]
+			//the variable frag 2 is assigned the value "." of the nfastack array
  			nfastack = nfastack[:len(nfastack)-1]
+			//nfa stack is updated 
  			frag1 := nfastack[len(nfastack)-1]
+			//the variable frag 1 is assigned the value "." of the nfastack array
  			nfastack = nfastack[:len(nfastack)-1]
+			//nfa stack is updated 
  
  			frag1.accept.edge1 = frag2.initial
  
  			nfastack = append(nfastack, &nfa{initial: frag1.initial, accept: frag2.accept})
  
- 		case '|':
+ 		case '|'://if the character = '|'
  			frag2 := nfastack[len(nfastack)-1]
+			//the variable frag 2 is assigned the value "|" of the nfastack array
  			nfastack = nfastack[:len(nfastack)-1]
+			//nfa stack is updated
  			frag1 := nfastack[len(nfastack)-1]
+			//the variable frag 1 is assigned the value "|" of the nfastack array 
  			nfastack = nfastack[:len(nfastack)-1]
+			//nfa stack is updated 
  
  			initial := state{edge1: frag1.initial, edge2: frag2.initial}
  			accept := state{}
@@ -48,9 +57,11 @@ func Poregtonfa(pofix string) *nfa {
  
  			nfastack = append(nfastack, &nfa{initial: &initial, accept: &accept})
  
- 		case '*':
+ 		case '*'://if the character = '*'
  			frag := nfastack[len(nfastack)-1]
+			//the variable frag is assigned the value "*" of the nfastack array 
  			nfastack = nfastack[:len(nfastack)-1]
+			//nfa stack is updated 
  
  			accept := state{}
  			initial := state{edge1: frag.initial, edge2: &accept}
@@ -59,8 +70,9 @@ func Poregtonfa(pofix string) *nfa {
  
  			nfastack = append(nfastack, &nfa{initial: &initial, accept: &accept})
  
-		case '+':
+		case '+'://if the character = '+'
 			frag := nfastack[len(nfastack)-1]
+			//the variable frag is assigned the value "+" of the nfastack array
 			accept := state{}
 			initial := state{edge1: frag.initial, edge2: &accept}
 
@@ -74,7 +86,7 @@ func Poregtonfa(pofix string) *nfa {
  			initial := state{symbol: r, edge1: &accept}
  
  			nfastack = append(nfastack, &nfa{initial: &initial, accept: &accept})
- 		}
+ 		}//end of the switch statement
  	}
 	//error on the stack
  	if len(nfastack) != 1 {
