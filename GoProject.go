@@ -1,60 +1,36 @@
 //David Clarke G00335563
 //Adapted from https://web.microsoftstream.com/video/9d83a3f3-bc4f-4bda-95cc-b21c8e67675e
+//Reference: https://golang.org/
 
-package main
-//import
-import (
-	"fmt"
-)
-
-func intopost(infix string) string {
-	//Creates a map with special characters, these are mapped to ints
-	specials := map[rune]int{'*': 10, '.': 9, '|': 8}
-
-	//Initializes an array of empty runes
-	pofix := []rune{} 
-
-	//Stack which stores operators from the infix regular expression
-	s := []rune{}
-	
-	//Loop over input
-	for _, r := range infix {
-		switch {
-
-		case r == '(':
-		//has open bracket at the end of the stack
-			s = append(s, r)
-		case r == ')':
-			for s[len(s)-1] != '(' {
-				pofix = append(pofix, s[len(s)-1]) //last element of 's'
-				s = s[:len(s)-1]                   //everything in 's' except for the last character
-			}
-
-			s = s[:len(s)-1]
-		//if a special character is found
-		case specials[r] > 0:
-
-			for len(s) > 0 && specials[r] <= specials[s[len(s)-1]] {
-				//Takes stack character and puts into pofix
-				pofix, s = append(pofix, s[len(s)-1]), s[:len(s)-1]
-			}
-
-			s = append(s, r)
-		//Not a bracket or a special character
-		default:
-			//Takes the default characters and puts it at the end of pofix
-			pofix = append(pofix, r)
-		}//switch
-	}//infix
-
-	//append to pofix whatever is left on the stack
-	for len(s) > 0 {
-		pofix, s = append(pofix, s[len(s)-1]), s[:len(s)-1]
-	}
-
-	return string(pofix)
-
-} 
+//package main
+package assets
+ 
+func Intopost(infix string) string {
+ 	//Creates a map with special characters and maps them to ints
+ 	specials := map[rune]int{'*': 10, '.': 9, '|': 8}
+ 
+ 		case specials[r] > 0:
+ 			for len(s) > 0 && specials[r] <= specials[s[len(s)-1]] {
+ 				//Takes a character of the stack and puts it into pofix
+ 				pofix, s = append(pofix, s[len(s)-1]), s[:len(s)-1]
+ 			}
+ 			//Less precendence then append current character onto the stack
+ 			s = append(s, r)
+ 		//Not a bracket or a special character
+ 		default:
+ 			//Takes the default characters and sticks it at the end of pofix
+ 			pofix = append(pofix, r)
+ 		}
+ 	}
+ 
+ 	//If there is anything left on the stack, append to pofix
+ 	for len(s) > 0 {
+ 		pofix, s = append(pofix, s[len(s)-1]), s[:len(s)-1]
+ 	}
+ 	return string(pofix)
+ } //intopost
+ 
+ /*
 
 func main() {
 	//Answer: ab.c*.
@@ -72,4 +48,14 @@ func main() {
 	//Answer: abb.+.c.
 	fmt.Println("Infix:  ", "a.(b.b)+.c")
 	fmt.Println("Postfix: ", intopost("a.(b.b)+.c"))
-} //main
+
+}//main
+
+*/
+
+func TrimEndString(s string) string {
+	if len(s) > 0 {
+		s = s[:len(s)-2]
+	}
+	return s
+}
