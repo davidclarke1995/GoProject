@@ -19,3 +19,5 @@ It suggested that I pull the project down to local repository but if I tried a "
 "Pull is not possible because you have unmerged files. Please, fix them up in the work tree, and then use 'git add/rm ' as appropriate to mark resolution, or use 'git commit -a'."
 
 So I seemed to be going in circles, meanwhile I could continue working on the project without committing but eventually a few days later through StackOverflow, I found a handy feature on git "git reset --hard". My local repository was behind the remote repository but this reset everything and I was able to commit and push again. 
+
+The .gitignore was set up to ignore certain files and directories. I looked up templates such as https://github.com/github/gitignore for the certain elements to have in my .gitignore file and the reasons https://www.quora.com/Whats-the-purpose-of-a-gitignore-file?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa such as .exe as I don't want my executable file to be visible in the github repository.
