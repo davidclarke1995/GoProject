@@ -6,7 +6,14 @@ Student ID: G00335563
 
 My name is David Clarke, I am an 3rd year student in Software Development. In one of my modules Graph Theory, I was asked to design a project that is worth 50% of the overall mudule grade. This project contains a Go program that can execute regular expressions against strings over the alphabet 0, 1 and with the special characters ., |, and ∗. We have to create a program that can turn a regular expression into postfix notation, and then into a non deterministic finite automota. It was written in Visual Studio Code in GoLang. 
 
-## User Instructions
+## User Instructions:
+
+###Downloading the project
+
+The user must download both git and go from the following links if they have not already  https://golang.org/dl/ https://git-scm.com/downloads.
+To clone the remote repository to the users local machine, they must enter https://github.com/davidclarke1995/GoProject.git into the command prompt
+
+### Running the program
 
 To run the program in visual studio code, the user must select "Ctrl" and ' to open up the terminal. In the terminal the user must type "go build GoProject.go" to build the program and must type "go run GoProject.go" to compile and run the code.
 
@@ -26,5 +33,5 @@ The .gitignore was set up to ignore certain files and directories. I looked up t
 
 ## Conclusion
 
-Overall I was very happy at the learning process of this project. The videos that Ian had up on moodle were very helpful to understand and there was a lot of content online of Thompsons Algorithm. I found comparing pofix expression to NFA very dificult but solved through help of StackOverflow and some other online material. Also, I had a huge struggle with GitHub not being able to commit successfully but eventually got that issue sorted. I believe the error was because I updated the Readme on GitHub rather than on visual studios and committed so my remote repository and local repository were out of sync and I could not perform a "git pull" request. I think I have learned a lot from this project and look forward to using GoLang again in the future. 
+Overall I was very happy at the learning process of this project. The videos that my lecturer Ian McLoughlin had up on moodle were very helpful to understand and there was a lot of content online of Thompsons Algorithm. I found comparing pofix expression to NFA very dificult but solved through help of StackOverflow and some other online material. Also, I had a huge struggle with GitHub not being able to commit successfully but eventually got that issue sorted. I believe the error was because I updated the Readme on GitHub rather than on visual studios and committed so my remote repository and local repository were out of sync and I could not perform a "git pull" request. I think I have learned a lot from this project and look forward to using GoLang again in the future. 
 
