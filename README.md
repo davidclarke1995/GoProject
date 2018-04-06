@@ -15,11 +15,15 @@ To clone the remote repository to the users local machine, they must enter https
 
 ### Running the program
 
-To run the program in visual studio code, the user must select "Ctrl" and ' to open up the terminal. In the terminal the user must type "go build GoProject.go" to build the program and must type "go run GoProject.go" to compile and run the code.
+To run the program in visual studio code, the user must select "Ctrl" and ' to open up the terminal while in the runner class. In the terminal the user must type "go build GoProject.go" to build the program and must type "go run GoProject.go" to compile and run the code.
 
 ## About Project
 
-Before starting this project, I read the brief and specs thoroughly and then watched the videos that were posted weekly on the moodle page. Understanding how the project works was essential before starting. The shunt coding video was what I heavily referenced my work on and pulled from. The thompson algorithm was what the project is based on. I added another character to use as an element, "+", this worked successfully but trying to add other elements let me down. Trying to actually commit my workings was a real issue for me halfway through doing this project as i was getting the error:
+Before starting this project, I read the brief and specs thoroughly and then watched the videos that were posted weekly on the moodle page. Understanding how the project works was essential before starting. The shunt coding video was what I heavily referenced my work on and pulled from. The Thompson algorithm was what the project is based on. 
+
+I began by planning out the workings of the project and deciding how it would work. I am quite familiar with writing in java and decided to lay out my project how I would with a standard java project. This included involving a main class or a "runner". To less complicate things for myself, I had seperate classes run the individual calculations and the functions.
+
+I added more characters (than initially stated in the brief) to use as elements such as "+" and "?", this worked successfully but trying to add other elements let me down. Trying to actually commit my workings was a real issue for me halfway through doing this project as i was getting the error:
 
 "! [rejected] master -> master (non-fast-forward) error: failed to push some refs to 'git@github.com/davidclarke1995/GoProject.git' To prevent you from losing history, non-fast-forward updates were rejected Merge the remote changes (e.g. 'git pull') before pushing again. See the 'Note about fast-forwards' section of 'git push --help' for details."
 
