@@ -8,7 +8,7 @@ My name is David Clarke, I am an 3rd year student in Software Development. In on
 
 ## User Instructions:
 
-###Downloading the project
+### Downloading the project
 
 The user must download both git and go from the following links if they have not already  https://golang.org/dl/ https://git-scm.com/downloads.
 To clone the remote repository to the users local machine, they must enter https://github.com/davidclarke1995/GoProject.git into the command prompt
