@@ -39,3 +39,12 @@ The .gitignore was set up to ignore certain files and directories. I looked up t
 
 Overall I was very happy at the learning process of this project. The videos that my lecturer Dr. Ian McLoughlin had up on moodle were very helpful to understand and there was a lot of content online of Thompsons Algorithm. I found comparing pofix expression to NFA very dificult but solved through help of StackOverflow and some other online material. Also, I had a huge struggle with GitHub not being able to commit successfully but eventually got that issue sorted. I believe the error was because I updated the Readme on GitHub rather than on visual studios and committed so my remote repository and local repository were out of sync and I could not perform a "git pull" request. I think I have learned a lot from this project and look forward to using GoLang again in the future. 
 
+## References
+
+https://web.microsoftstream.com/video/9d83a3f3-bc4f-4bda-95cc-b21c8e67675e
+https://stackoverflow.com/questions/35272592/how-are-finite-automata-implemented-in-code?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+https://golang.org/
+https://cs.stackexchange.com/questions/30114/converting-nfa-to-regular-expression?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+https://en.wikipedia.org/wiki/Automata-based_programming
+https://cs.stackexchange.com/questions/43845/does-thompsons-algorithm-produce-optimal-nfas
+https://stackoverflow.com/questions/20061252/convert-a-nfa-to-regular-expression?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
