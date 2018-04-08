@@ -57,5 +57,6 @@ func TrimEndString(s string) string {
 	if len(s) > 0 {
 		s = s[:len(s)-2]
 	}
+	//if less than 0, return 's'
 	return s
 }
